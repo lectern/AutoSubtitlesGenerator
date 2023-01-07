@@ -4,8 +4,8 @@
 Auto generate subtitles (.srt) given a video or audio file using [WhispherX](https://github.com/m-bain/whisperX). Essentially, it takes the generated word-level timestamps and formats them according to user specifications and sentence recognization.
 
 ## Demo:
-https://youtu.be/XATlRA4Qh7s
-[![Screenshot_1](https://user-images.githubusercontent.com/30962319/211169733-d43586b0-e810-4527-8fe4-8b2885f87c2e.png)](https://youtu.be/XATlRA4Qh7s)
+https://youtu.be/Oh1WU_MHpYk
+[![Screenshot_1](https://user-images.githubusercontent.com/30962319/211169733-d43586b0-e810-4527-8fe4-8b2885f87c2e.png)](https://youtu.be/Oh1WU_MHpYk)
 
 
 ## Download and Installation
