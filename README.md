@@ -38,7 +38,7 @@ $ pip3 install torch torchvision torchaudio --extra-index-url https://download.p
 
 ## Usage:
 You will be prompted with 3 inputs:
-1. file path (video|audio): **relative or complete file path for any supported filetype which can be found by performming `ffmpeg -formats`**
+1. file path (video|audio): **relative or complete file path for any supported filetype which can be found by performing `ffmpeg -formats`**
 2. no sound filter delay: **the amount of no speech delay between words to consider as a pause (int > 0)**
 3. max number of words per subtitle: **the maximum number of words per each subtitle (int > 0)**
 
