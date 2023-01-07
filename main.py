@@ -42,8 +42,8 @@ class Subtitles:
             if (split_index[i + 1] - split_index[i] >= length):
                 new_index = [x for x in range(split_index[i], split_index[i + 1], length)]
                 split_index += new_index[1:]
-
-        # recode once bug is discovered, previously it cut more than it shouldve.
+        
+        # remove added 0 and max length, sort due to split.
         split_index = list(set(split_index[1:-1]))
         split_index.sort()
 
