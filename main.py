@@ -28,31 +28,37 @@ class Subtitles:
         for i in range(len(words) - 1):
             a, b = words[i], words[i+1]
             delta_t = float(b['start']) - float(a['end'])
-            if (a['text'][-1] in ['.', '!', '?', ','] or (delta_t > self.delay)):
+            if (a['text'][-1] in ['.', '!', '?'] or (delta_t > self.delay)):
                 split_index += [i + 1]
-        
+
         # seperate by delay
         if 0 not in split_index:
-            split_index += [0]
+            split_index.insert(0, 0)
         if len(words) not in split_index:
-            split_index += [len(words)]
+            split_index.insert(-1, len(words))
         
         # get filler index to fix long word groups
         for i in range(len(split_index) - 1):
             if (split_index[i + 1] - split_index[i] >= length):
                 new_index = [x for x in range(split_index[i], split_index[i + 1], length)]
+                split_index += new_index[1:]
 
-            split_index += new_index[1:]
+        # recode once bug is discovered, previously it cut more than it shouldve.
+        split_index = list(set(split_index[1:-1]))
         split_index.sort()
-        split_index = split_index[1:-1]
 
         # group words together
         # https://stackoverflow.com/a/1198876/20218615
-        grouped = [words[i:j] for i, j in zip([0]+split_index, split_index+[None])]
-        grouped = list(filter(None, grouped))
+        grouped = [words[i:j] for i, j in zip([0]+split_index, split_index)]
         return grouped
 
     def gen_srt(self, path, grouped):
+        # remove file if it already exists
+        try:
+            os.remove(path + ".srt")
+        except OSError:
+            pass
+        
         with open(path + ".srt", "a", encoding="utf-8") as f:
             for group in grouped:
                 sub_index = grouped.index(group) + 1
