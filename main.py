@@ -35,12 +35,12 @@ class Subtitles:
         if 0 not in split_index:
             split_index.insert(0, 0)
         if len(words) not in split_index:
-            split_index.insert(-1, len(words))
+            split_index += [len(words)]
         
         # get filler index to fix long word groups
         for i in range(len(split_index) - 1):
             if (split_index[i + 1] - split_index[i] >= length):
-                new_index = [x for x in range(split_index[i], split_index[i + 1], length)]
+                new_index = [x for x in range(split_index[i], split_index[i + 1] + 1, length)]
                 split_index += new_index[1:]
         
         # remove added 0 and max length, sort due to split.
