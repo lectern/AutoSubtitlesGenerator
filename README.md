@@ -24,7 +24,7 @@ You may also need to install FFMPEG, Rust etc. Follow OpenAI's instructions here
 
 Next, download the auto subtitles generator:
 ```
-$ git clone https://github.com/lectern/auto_subtitles_generator.git
+$ git clone https://github.com/lectern/AutoSubtitlesGenerator.git
 $ cd auto_subtitles_generator
 $ python main.py
 ```
