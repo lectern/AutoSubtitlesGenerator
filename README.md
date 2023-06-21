@@ -44,4 +44,4 @@ You will be prompted with 3 inputs:
 
 Once all inputs are valid and set, a .srt file will be found in the same location as your video once the processing is done.
 
-Feel free to contact me @ Lectern#5112 if any problems arise.
+Feel free to contact me on discord @ lectern if any problems arise.
